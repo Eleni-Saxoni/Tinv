@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="app.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="images/general/logo.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tweet Invest Home Page</title>
+    </head>
+
+    <body>
+        <nav>
+            <a class="current_tab" href="index.html">Home</a>
+            <a href="watchlist.html">Watchlist</a>
+            <a href="news.html">News</a>
+            <a href="charts.html">Charts</a>
+            <a href="user.html">User</a>
+        </nav>
+
+        <div class="home_wrapper">
+            <!--Make it functional!-->
+            <div class="home_and_charts_search_bar">
+                <form id="form">
+                    <input type="search" id="home_and_charts_query" name="q" onkeyup="search_everything()" placeholder="Search for news, symbols, or companies" title="Try symbols like AMC, Castor Maritime, Apple etc.">
+                    <button id="home_and_charts_search_btn">🔍</button>
+                </form>
+            </div>
+
+            <div class="big_news">
+                <h1>News</h1>
+                <img id="big_news_img" src="images/general/stop_coronavirus.jpg" width=90% height=90% alt=Coronavirus_image>
+                <p id="big_news_preview">How will countries coming out of Lockdown affect the economy? <br> <a div class="see_more" href="https://voxeu.org/article/how-economic-effects-covid-19-lockdowns-different-regions-interact-through-supply-chains">See more ></a></p>
+            </div>
+
+            <div class="home_news">
+                <div class="home_news_flexbox">
+                    <div>
+                        <img id="news_img" src="images/general/dogecoin.webp" width=50% height=50% alt="Dogecoin_image">
+                        <p id="small_news_preview">Dogecoin spikes more than 300% in a day. Experts warn of bubble... <br> <a div class="see_more" href="https://www.eurocapital.gr/permalink/122105.html">See more ></a></p>
+                    </div>
+                    <div>
+                        <img id="news_img" src="images/general/russian-flag.jpg" width=50% height=50% alt="Russian_flag_image">
+                        <p id="small_news_preview">Pressures mounting as Russia expels Diplomats. <br> <a div class="see_more" href="https://www.rferl.org/a/russia-expels-seven-european-diplomats-in-continuing-standoff/31227206.html">See more ></a></p>
+                    </div>
+                    <div>
+                        <img id="news_img" src="images/general/hunting.jpg" width=50% height=50% alt="Hunting_image">
+                        <p id="small_news_preview">The economy is collapsing. Learn to hunt for food. <br> <a div class="see_more" href="https://www.bbc.com/news/business-56495443">See more ></a></p>
+                    </div>
+                    <div>
+                        <img id="news_img" src="images/general/bull_statue.png" width=52% height=52% alt="Bullring_image">
+                        <p id="small_news_preview">Shopping center giant slashes rent in revival bid. <br> <a div class="see_more" href="https://www.bbc.com/news/business-56770600#:~:text=Hammerson%2C%20owner%20of%20Birmingham's%20Bullring,from%20a%20year%20of%20lockdowns.">See more ></a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="indexes">
+                <div class="home_index_flexbox">
+                    <div class="index_item">
+                        <p class="index_title">Vix</p>
+                        <p class="index_price">17.02</p>
+                        <p class="index_change_positive">+0.45 (+2.72%)</p>
+                    </div>
+                    <div class="index_item">
+                        <p class="index_title">Bitcoin USD</p>
+                        <p class="index_price">57,010.75</p>
+                        <p class="index_change_negative">-678,33 (-1.18%)</p>
+                    </div>
+                    <div class="index_item">
+                        <p class="index_title">GBP/USD</p>
+                        <p class="index_price">1.3885</p>
+                        <p class="index_change_positive">+0.0054 (+0.387%)</p>
+                    </div>
+                    <div class="index_item">
+                        <p class="index_title">S&P Futures</p>
+                        <p class="index_price">4,174.00</p>
+                        <p class="index_change_negative">-2.25 (-0.05%)</p>
+                    </div>
+                    <div class="index_item">
+                        <p class="index_title">Nasqad Futures</p>
+                        <p class="index_price">14,033.00</p>
+                        <p class="index_change_positive">+3.50 (+0.02)</p>
+                    </div>
+                    <div class="index_item">
+                        <p class="index_title">Russell 2000 Futures</p>
+                        <p class="index_price">2,251.50</p>
+                        <p class="index_change_negative">-7.50 (-0.33)</p>
+                    </div>
+                    <div class="index_item">
+                        <p class="index_title">Crude Oil</p>
+                        <p class="index_price">67.18</p>
+                        <p class="index_change_positive">+0.05 (+0.08%)</p>
+                    </div>
+                    <div class="index_item">
+                        <p class="index_title">Gold</p>
+                        <p class="index_price">1,786.70</p>
+                        <p class="index_change_positive">+6.60 (+0.37%)</p>
+                    </div>
+                    <div class="index_item">
+                        <p class="index_title">APA Corp</p>
+                        <p class="index_price">1.3885</p>
+                        <p class="index_change_positive">+0.0054 (+0.387%)</p>
+                    </div>
+                    <div class="index_item">
+                        <p class="index_title">Airbnb</p>
+                        <p class="index_price">2,251.50</p>
+                        <p class="index_change_negative">-7.50 (-0.33)</p>
+                    </div>
+                    <div class="index_item">
+                        <p class="index_title">AT&T</p>
+                        <p class="index_price">14,033.00</p>
+                        <p class="index_change_positive">+3.50 (+0.02)</p>
+                    </div>
+                    <div class="index_item">
+                        <p class="index_title">Honeywell</p>
+                        <p class="index_price">4,174.00</p>
+                        <p class="index_change_negative">-2.25 (-0.05%)</p>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="adds">
+                <p id="add_text">Click here if you want your AD featured</p>
+            </div>
+        </div>
+    </body>
+</html>

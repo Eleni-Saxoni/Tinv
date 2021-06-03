@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="images/general/logo.ico" />
+        <!--Import the plotly library used in ploting the time series -->
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+        <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="jquery.csvToTable.js"></script>
+
+    </head>
+
+    <body>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="watchlist.html">Watchlist</a>
+            <a href="news.html">News</a>
+            <a class="current_tab" href="charts.html">Charts</a>
+            <a href="user.html">User</a>
+        </nav>
+
+        <div class="charts_wrapper">
+            <!--Make it functional!-->           
+            <div class="home_and_charts_search_bar">
+                <form id="form">
+                    <input type="search" id="home_and_charts_query" name="q" placeholder="Search for symbols" title="Try symbols like AMC, Castor Maritime, Apple etc.">
+                    <button id="home_and_charts_search_btn">🔍</button>
+                </form>
+            </div>
+            <div class="stock_price_chart">
+                <h2>Live share price evolution</h2>
+
+                <!--Complete!-->           
+                <div class="prediction">
+                    <!--Make them functional!-->           
+                    <div class="prediction_options_buttons">
+                        <button id="min15_btn">15m</button>
+                        <button id="min30_btn">30m</button>
+                        <button id="min45_btn">45m</button>
+                        <button id="hours2_btn">2h</button>
+                        <button id="all_btn">all</button>
+                        <button id="AMC_btn">AMC</button>
+                        <button id="Symbol_2_btn">S2</button>
+                        <button id="Symbol_3_btn">S3</button>
+                        <button id="Symbol_4_btn">S4</button>
+                        <button id="Symbol_5_btn">S5</button>
+                    </div>
+
+                    <div id="plot"> 
+                        <script>
+                            function makeplot() {
+                                Plotly.d3.csv("AMC.csv", function(data){ processData(data) } );
+                            };
+                                
+                            function processData(allRows) {
+
+                                console.log(allRows);
+                                var x = [], y = [], standard_deviation = [];
+
+                                for (var i=0; i<allRows.length; i++) {
+                                    row = allRows[i];
+                                    x.push( row['Dates'] );
+                                    y.push( row['Close'] );
+                                }
+                                console.log( 'X', x, 'Y', y, 'SD',standard_deviation );
+                                makePlotly( x, y, standard_deviation );
+                            }
+
+                            function makePlotly( x, y, standard_deviation ){
+                                var plotDiv = document.getElementById("plot");
+                                var traces = [{
+                                    x: x, 
+                                    y: y
+                                }];
+
+                                Plotly.newPlot('plot', traces, 
+                                    {title: 'AMC'});
+                            };
+                            makeplot();
+
+                            /*
+                            //Creating the time series
+                            var trace = {x: [1, 2, 3, 4, 5, 6, 7, 8], y: [1, 4, 9, 16, 25, 36, 49, 64], mode: 'line'};
+                            var data = [trace];   
+                            Plotly.newPlot('plot', data);*/
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="charts_news">
+                <h1>Related News</h1>
+                <img id="charts_news_img" src="images/charts_page/news_img.jpg" width=15% height=50% alt=News_Image>
+                <h3>If you think AMC, Sundal and Zomedica are cheap, I have bad news</h3>
+                <p id="charts_news_preview">Beginning in mid-January, retail investors on Reddit's WallStreetBets chatroom began bancing together to buy shares and call options in stocks with every high levels of short...</p>
+            </div>
+        </div>
+
+    </body>
+</html>

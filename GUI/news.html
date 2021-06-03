@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="images/general/logo.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Get informed</title>
+    </head>
+
+    <body>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="watchlist.html">Watchlist</a>
+            <a class="current_tab"href="news.html">News</a>
+            <a href="charts.html">Charts</a>
+            <a href="user.html">User</a>
+        </nav>
+
+        <div class="news_wrapper">
+        <!--Make it functional!-->           
+            <div class="news_search_bar">
+                <form id="form">
+                    <input type="search" id="news_query" name="q" placeholder="Search for news" title="Try symbols like AMC, Castor Maritime, Apple etc.">
+                    <button id="news_search_btn">🔍</button>
+                </form>
+            </div>
+
+            <div class="news_left">
+                <h1>News</h1>
+                <div class="news_flexbox">
+                    <div class="news_box">
+                        <img class="news_img" src="images/general/dogecoin.webp" width=30% height=100% alt="Dogecoin_image">
+                        <p class="news_title"> <a href="https://www.eurocapital.gr/permalink/122105.html">Dogecoin spikes more than 300% in a week. <br> Experts warn of bubble.</a></p>
+                        <p class="news_text_preview">The total value of the dogecoins in circulation is nearly $40 billion - not bad for a digital currency that started as a joke.</p>
+                        <p id="hours_posted">🕒 4h</p>
+                        <button id="share_btn">🌐 Share</button>
+                    </div>
+                    <div class="news_box">
+                        <img class="news_img" src="images/general/coronavirus.jpg" width=30% height=130% alt="Stop_coronavirus_image">
+                        <p class="news_title"> <a href="https://voxeu.org/article/how-economic-effects-covid-19-lockdowns-different-regions-interact-through-supply-chains">How will countries coming out of Lockdown affect the economy?</a></p>
+                        <p class="news_text_preview">SARS-COV-2 has caused almost 7 million confirmed cased and 400k fatalities globally as of June 6th 2021. Consequencies on economic...</p>
+                        <p id="hours_posted">🕒 4h</p>
+                        <button id="share_btn">🌐 Share</button>
+                    </div>
+                    <div class="news_box">
+                        <img class="news_img" src="images/general/russian-flag_2.jpg" width=30% height=100% alt="Russian_flag_image">
+                        <p class="news_title"> <a href="https://www.rferl.org/a/russia-expels-seven-european-diplomats-in-continuing-standoff/31227206.html">Pressure mounting as Russia expels Diplomats.</a></p>
+                        <p class="news_text_preview">Amid mounting international pressure over its perceived crackdown on dissent, Russia has expelled three diplomats from Germany.</p>
+                        <p id="hours_posted">🕒 20h</p>
+                        <button id="share_btn">🌐 Share</button>
+                    </div>
+                    <div class="news_box">
+                        <img class="news_img" src="images/general/hunting.jpg" width=30% height=100% alt="Hunting_image">
+                        <p class="news_title"> <a href="https://www.bbc.com/news/business-56495443">The economy is collapsing. Learn to hunt for food.</a></p>
+                        <p class="news_text_preview">After decades of decline, a growing number of Americans are now learning hunting skills, as writer Richard Baimbridge reports.</p>
+                        <p id="hours_posted">🕒 3d</p>
+                        <button id="share_btn">🌐 Share</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news_right">
+                <div class="news_flexbox">
+                    <div class="news_box">
+                        <img class="news_img" src="images/general/bull_statue_2.jpg" width=30% height=100% alt="Bullring_image">
+                        <p class="news_title"> <a href="https://www.bbc.com/news/business-56770600#:~:text=Hammerson%2C%20owner%20of%20Birmingham's%20Bullring,from%20a%20year%20of%20lockdowns.">Shopping centre giant slashes rent in revival bid.</a></p>
+                        <p class="news_text_preview">Hammerson, owner of Birmingham's Bullring, is to cut rents for its retail tenants by 30% as it aims to...</p>
+                        <p id="hours_posted">🕒 4h</p>
+                        <button id="share_btn">🌐 Share</button>
+                    </div>
+                    <div class="news_box">
+                        <img class="news_img" src="images/general/UK_exports.jpg" width=30% height=100% alt="UK_trade_image">
+                        <p class="news_title"><a href="https://www.bbc.com/news/business-56729631#:~:text=Trade%20between%20the%20UK%20and,struggled%20with%20new%20trade%20rules.">UK exports to EU rebound after January's slump.</a></p>
+                        <p class="news_text_preview">Trade between the UK and EU partially recovered in February, after a steep drop in January following Brexit.</p>
+                        <p id="hours_posted">🕒 3 June 2021</p>
+                        <button id="share_btn">🌐 Share</button>
+                    </div>
+                    <div class="news_box">
+                        <img class="news_img" src="images/general/biden.jpg" width=30% height=100% alt="Joe_Biden_image">
+                        <p class="news_title"><a href="https://www.bbc.com/news/world-europe-56692865">Could Joe Biden's tax plan hit Irelands economy?</a></p>
+                        <p class="news_text_preview">Wander around Dublin's Grand Canal Quay and you get a sense of how successful the Republic of Ireland has been in attracting US technology.</p>
+                        <p id="hours_posted">🕒 3 June 2021</p>
+                        <button id="share_btn">🌐 Share</button>
+                    </div>
+                    <div class="news_box">
+                        <img class="news_img" src="images/general/world_bank.jfif" width=30% height=100% alt="World_Bank_image">
+                        <p class="news_title"><a href="https://www.bbc.com/news/business-56666001#:~:text=The%20head%20of%20the%20World,companies%20that%20is%20too%20high.&text=The%20UK%20is%20also%20looking,first%20increase%20since%20the%201970s.">World Bank warns against "high" global tax minimum.</a></p>
+                        <p class="news_text_preview">The total value of the dogecoins in circulation is nearly $40 billion - not bad for a digital currency that started as a joke.</p>
+                        <p id="hours_posted">🕒 1 June 2021</p>
+                        <button id="share_btn">🌐 Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
