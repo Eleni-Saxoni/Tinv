@@ -2,10 +2,11 @@
 
 Εαν έχουμε ήδη ανοιχτό τον Chrome:
 1) Κλείνουμε ό,τι instance του Chrome έχουμε ανοιχτό
-2) System restart
 3) Συνεχίζουμε ακολουθώντας τα παρακάτω βήματα
 
-Εν δεν έχουμε ήδη ανοιχτό τον Chrome:
+Εαν δεν έχουμε ήδη ανοιχτό τον Chrome:
 1) Command Prompt
 2) "whateverIsYourChromeΕxePath\chrome.exe" --allow-file-access-from-files
 πχ "C:\Program Files(x84)\Google\Chrome\Application\chrome.exe" --allow-file-access-from-files
+
+Η παραπάνω παράμετρος κατά το άνοιγμα του Chrome δεν θα επηρεάσει την επόμενη φορά που θα τον ανοίξετε.

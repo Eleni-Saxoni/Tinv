@@ -5,6 +5,11 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="shortcut icon" type="image/x-icon" href="images/general/logo.ico" />
+        <!--Import the plotly library used in ploting the time series -->
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="js/jquery.csvToTable.js"></script>
+        <script src="js/app.js"></script>
         <title>Search and compare stock prices</title>
     </head>
 
@@ -18,13 +23,159 @@
         </nav>
 
         <div class="watchlist_wrapper">
-            <div class="symbol_options">Symbol_options</div>
-            <div class="symbol_screen">Symbol_screen</div>
-            <div class="stock_time_series">Stock_time_series</div>
-        </div>
+            <div class="symbol_options">
+                <h1>Watchlist</h1>
+                <div class="symbol_buttons">
+                    <button id="add_symbol_btn">+ Add New Symbol</button>
+                    <button id="sort_btn">^ Sort(Ascending)</button>
+                    <button id="compare_btn">Compare</button>
+                </div>
+            </div>
 
-        <footer>
-            <p> © Tweet Invest Team 2021 </p>
-        </footer>
+            <div class="symbol_screen">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Last Price</th>
+                        <th>Change</th>
+                        <th>Change %</th>
+                        <th>Currency</th>
+                        <th>Last Open</th>
+                        <th>Last Close</th>
+                    </tr>
+                    <form>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="chk_AMC" name="AMC_symbol" checked>
+                                <label for="chk_AMC">AMC</label>
+                            </td>
+                            <td>
+                                Last Price
+                            </td>
+                            <td>
+                                Change
+                            </td>
+                            <td>
+                                Change %
+                            </td>
+                            <td>
+                                Currency
+                            </td>
+                            <td>
+                                Last Open
+                            </td>
+                            <td>
+                                Last Close
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="chk_GME" name="GME_symbol">
+                                <label for="chk_GME">GME</label>
+                            </td>
+                            <td>
+                                Last Price
+                            </td>
+                            <td>
+                                Change
+                            </td>
+                            <td>
+                                Change %
+                            </td>
+                            <td>
+                                Currency
+                            </td>
+                            <td>
+                                Last Open
+                            </td>
+                            <td>
+                                Last Close
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </form>
+                </table>
+            </div>
+
+            <div class="stock_time_series">
+                <div id="stock_plot">
+                    <script>
+                        function makeplot() {
+                            Plotly.d3.csv("files/AMC.csv", function(data){ processData(data) } );
+                        };
+                            
+                        function processData(allRows) {
+
+                            console.log(allRows);
+                            var x = [], y = [], standard_deviation = [];
+
+                            for (var i=0; i<allRows.length; i++) {
+                                row = allRows[i];
+                                x.push( row['Dates'] );
+                                y.push( row['Close'] );
+                            }
+                            console.log( 'X', x, 'Y', y, 'SD',standard_deviation );
+                            makePlotly( x, y, standard_deviation );
+                        }
+
+                        function makePlotly( x, y, standard_deviation ){
+                            var plotDiv = document.getElementById("stock_plot");
+                            var traces = [{
+                                x: x, 
+                                y: y
+                            }];
+
+                            Plotly.newPlot('stock_plot', traces, 
+                                {title: 'AMC'});
+                        };
+                        makeplot();
+                    </script>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
