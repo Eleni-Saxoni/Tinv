@@ -1,0 +1,14 @@
+To do:
+- Complete user.html and watchlist.html
+- Make the prediction_options_buttons functional (charts)
+- Give borders light colours
+- Make functional searchbars (index, charts, news) - check app.js
+- Change every px to % or vh/vw
+- Make share button functional ??
+- Add footer to some of the pages
+
+
+After everything is done:
+- Check outcome on different screen sizes
+- Check for forgotten comments
+- Check html and css files in validators

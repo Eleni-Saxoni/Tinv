@@ -13,11 +13,9 @@
         <link rel="shortcut icon" type="image/x-icon" href="images/general/logo.ico" />
         <!--Import the plotly library used in ploting the time series -->
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-        
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
         <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-        <script src="jquery.csvToTable.js"></script>
-
+        <script src="js/jquery.csvToTable.js"></script>
+        <script src="js/app.js"></script>
     </head>
 
     <body>
@@ -39,8 +37,6 @@
             </div>
             <div class="stock_price_chart">
                 <h2>Live share price evolution</h2>
-
-                <!--Complete!-->           
                 <div class="prediction">
                     <!--Make them functional!-->           
                     <div class="prediction_options_buttons">
@@ -87,12 +83,6 @@
                                     {title: 'AMC'});
                             };
                             makeplot();
-
-                            /*
-                            //Creating the time series
-                            var trace = {x: [1, 2, 3, 4, 5, 6, 7, 8], y: [1, 4, 9, 16, 25, 36, 49, 64], mode: 'line'};
-                            var data = [trace];   
-                            Plotly.newPlot('plot', data);*/
                         </script>
                     </div>
                 </div>
@@ -100,10 +90,9 @@
             <div class="charts_news">
                 <h1>Related News</h1>
                 <img id="charts_news_img" src="images/charts_page/news_img.jpg" width=15% height=50% alt=News_Image>
-                <h3>If you think AMC, Sundal and Zomedica are cheap, I have bad news</h3>
+                <h3><a href="https://www.fool.com/investing/2021/04/16/if-you-think-amc-sundial-zomedica-cheap-bad-news/">If you think AMC, Sundal and Zomedica are cheap, I have bad news</a></h3>
                 <p id="charts_news_preview">Beginning in mid-January, retail investors on Reddit's WallStreetBets chatroom began bancing together to buy shares and call options in stocks with every high levels of short...</p>
             </div>
         </div>
-
     </body>
 </html>
