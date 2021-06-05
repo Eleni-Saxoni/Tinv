@@ -31,7 +31,7 @@
             <!--Make it functional!-->           
             <div class="home_and_charts_search_bar">
                 <form id="form">
-                    <input type="search" id="home_and_charts_query" name="q" placeholder="Search for symbols" title="Try symbols like AMC, Castor Maritime, Apple etc.">
+                    <input type="search" id="home_and_charts_query" name="q" placeholder="Search for symbols..." title="Try symbols like AMC, Castor Maritime, Apple etc.">
                     <button id="home_and_charts_search_btn">🔍</button>
                 </form>
             </div>
@@ -53,37 +53,7 @@
                     </div>
 
                     <div id="plot"> 
-                        <script>
-                            function makeplot() {
-                                Plotly.d3.csv("files/AMC.csv", function(data){ processData(data) } );
-                            };
-                                
-                            function processData(allRows) {
-
-                                console.log(allRows);
-                                var x = [], y = [], standard_deviation = [];
-
-                                for (var i=0; i<allRows.length; i++) {
-                                    row = allRows[i];
-                                    x.push( row['Dates'] );
-                                    y.push( row['Close'] );
-                                }
-                                console.log( 'X', x, 'Y', y, 'SD',standard_deviation );
-                                makePlotly( x, y, standard_deviation );
-                            }
-
-                            function makePlotly( x, y, standard_deviation ){
-                                var plotDiv = document.getElementById("plot");
-                                var traces = [{
-                                    x: x, 
-                                    y: y
-                                }];
-
-                                Plotly.newPlot('plot', traces, 
-                                    {title: 'AMC'});
-                            };
-                            makeplot();
-                        </script>
+                        <script> predictTimeSeries() </script>
                     </div>
                 </div>
             </div>

@@ -1,53 +1,97 @@
 /*This whole file is in working process */
 
-/*Functions used for search bar functionality*/
-function search_everything() {
-    let input = document.getElementById('home_and_charts_query').value
-    input=input.toLowerCase();
-    let x = ["AMC"];
-      
-    for (i = 0; i < x.length; i++) { 
-        if (!x[i].innerHTML.toLowerCase().includes(input)) {
-            x[i].style.display="none";
-        }
-        else {
-            x[i].style.display="list-item";                 
-        }
-    }
-}
-
+//createListItem, search: used for search bar functionality
 function createListItem(newItem) {
     let li = document.createElement('li');
     li.textContent = newItem;
     return li;
 }
 
-function search_news() {
-    let stringToSearch = document.getElementById('news_query').value;
-    stringToSearch = stringToSearch.toLowerCase();
-    const availableNews =  document.getElementsByClassName('news_title');
-    
-    var news_found_list = document.getElementById("news_found_list");
-    var listItem = document.getElementById("li");
+function search(searchCode) {
+    if (searchCode=="news") {
+        let stringToSearch = document.getElementById('news_query').value;
+        stringToSearch = stringToSearch.toLowerCase();
+        const availableNews =  document.getElementsByClassName('news_title');
 
-    for (i = 0; i < availableNews.length; i++) { 
-        if (availableNews[i].innerHTML.toLowerCase().includes(stringToSearch)) {
-            news_found_list.appendChild(createListItem(availableNews[i].innerHTML));
+        var news_found_list = document.getElementById("news_found_list");
+        var listItem = document.getElementById("li");
+    
+        for (i = 0; i < availableNews.length; i++) { 
+            if (availableNews[i].innerHTML.toLowerCase().includes(stringToSearch)) {
+                news_found_list.appendChild(createListItem(availableNews[i].innerHTML));
+            }
         }
     }
+    if (searchCode=="symbols") {
+
+
+    }  
 }
 
-function search_symbols() {
-    let input = document.getElementById('home_and_charts_query').value
-    input=input.toLowerCase();
-    let x = ["AMC"];
-      
-    for (i = 0; i < x.length; i++) { 
-        if (!x[i].innerHTML.toLowerCase().includes(input)) {
-            x[i].style.display="none";
+
+//Used to create the plot of existing stock data in watchlist.html
+function depictTimeSeries() {
+    function makeplot() {
+        Plotly.d3.csv("files/AMC.csv", function(data){ processData(data) } );
+    };
+        
+    function processData(allRows) {
+
+        console.log(allRows);
+        var x = [], y = [], standard_deviation = [];
+
+        for (var i=0; i<allRows.length; i++) {
+            row = allRows[i];
+            x.push( row['Dates'] );
+            y.push( row['Close'] );
         }
-        else {
-            x[i].style.display="list-item";                 
-        }
+        console.log( 'X', x, 'Y', y, 'SD',standard_deviation );
+        makePlotly( x, y, standard_deviation );
     }
+
+    function makePlotly( x, y, standard_deviation ){
+        var plotDiv = document.getElementById("stock_plot");
+        var traces = [{
+            x: x, 
+            y: y
+        }];
+
+        Plotly.newPlot('stock_plot', traces, 
+            {title: 'AMC'});
+    };
+    makeplot();
+}
+
+
+//Used to create the plot of a stock, including its prediction, in charts.html
+function predictTimeSeries() {
+    function makeplot() {
+        Plotly.d3.csv("files/AMC.csv", function(data){ processData(data) } );
+    };
+        
+    function processData(allRows) {
+
+        console.log(allRows);
+        var x = [], y = [], standard_deviation = [];
+
+        for (var i=0; i<allRows.length; i++) {
+            row = allRows[i];
+            x.push( row['Dates'] );
+            y.push( row['Close'] );
+        }
+        console.log( 'X', x, 'Y', y, 'SD',standard_deviation );
+        makePlotly( x, y, standard_deviation );
+    }
+
+    function makePlotly( x, y, standard_deviation ){
+        var plotDiv = document.getElementById("plot");
+        var traces = [{
+            x: x, 
+            y: y
+        }];
+
+        Plotly.newPlot('plot', traces, 
+            {title: 'AMC'});
+    };
+    makeplot();
 }

@@ -1,3 +1,5 @@
+/*-------------General tags used in all/many pages. In order of page placement-----------------*/
+
 body { 
     background-color: rgb(238, 234, 227);
 }
@@ -36,8 +38,12 @@ nav a.current_tab {
     color:rgb(3, 65, 189);
 }
 
+::placeholder {
+    font-family: Arial;
+    font-size: 0.9vw;
+    color: gray;
+}
 
-/*-------------General tags used in all/many pages. In order of page placement-----------------*/
 /*For headers like "News" on Home page*/
 h1 {
     font-family: Arial;
@@ -69,12 +75,12 @@ h3 a:hover {
     text-decoration: underline;
 }
 
-/*Add it to some pages!!*/
+/*
 footer {
     background-color: rgb(221, 222, 226);
     width: 100%;
     max-width: 100%;
-    padding: 5px;
+    padding: 0.5vw;
     margin-top: 2vw;
 }
 
@@ -83,16 +89,16 @@ footer p {
     overflow: hidden;
     text-align: center;
     font-family: Georgia;
-    font-size: 15px;
-}
+    font-size: 1vw;
+}*/
 
 
 /*-----------------CSS concerning the home screen----------------------*/
 .home_wrapper {
     display: grid;
-    gap: 10px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    gap: 1vw;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
     width: 100vw;
     max-width: 100vw;
     height: 100vh;
@@ -103,7 +109,7 @@ footer p {
 
 /*Identical search bar for both the index and the charts page*/
 .home_and_charts_search_bar {
-    padding: 10px;
+    padding: 1vw;
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row: 1;
@@ -111,20 +117,20 @@ footer p {
 
 /*Make it functional*/
 #home_and_charts_query {
-    width: 80%;
-    max-width: 80%;
-    height: 35px;
-    max-height: 35px;
+    width: 40vw;
+    max-width: 40vw;
+    height: 5vh;
+    max-height: 5vh;
     font-family: Arial;
     outline: none;
 }
 
 /*Make it functional*/
 #home_and_charts_search_btn {
-    width: 60px;
-    max-width: 60px;
-    height: 34px;
-    max-height: 34px;
+    width: 4vw;
+    max-width: 4vw;
+    height: 5vh;
+    max-height: 5vh;
     background-color:rgb(106, 116, 207);
     cursor: pointer;
 }
@@ -134,7 +140,7 @@ footer p {
 }
 
 .big_news {
-    padding: 10px;
+    padding: 1vw;
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row: 2;
@@ -143,16 +149,16 @@ footer p {
 #big_news_preview {
     font-family: Arial;
     color: rgb(98, 101, 104);
-    font-size: 19px;
+    font-size: 1.4vw;
     width: 80%;
     max-width:80%;
-    margin-bottom: 10px;
+    margin-bottom: 1vw;
 }
 
 #big_news_preview .see_more {
     color:blue;
     font-family: Arial;
-    font-size: 19px;
+    font-size: 1.4vw;
 }
 
 #big_news_preview .see_more:hover {
@@ -160,7 +166,7 @@ footer p {
 }
 
 .home_news {
-    padding: 10px;
+    padding: 1vw;
     grid-column: 3;
     grid-row-start: 1;
     grid-row-end: 3;
@@ -177,14 +183,14 @@ footer p {
 
 #news_img {
     float: left;
-    margin-right: 10px;
-    margin-bottom: 30px;
+    margin-right: 1vw;
+    margin-bottom: 6vh;
 }
 
 #small_news_preview {
     font-family: Arial;
     color: rgb(98, 101, 104);
-    font-size: 16px;
+    font-size: 1.1vw;
     width: 100%;
     max-width: 100%;
 }
@@ -192,7 +198,7 @@ footer p {
 #small_news_preview .see_more {
     color:blue;
     font-family: Arial;
-    font-size: 16px;
+    font-size: 1.1vw;
 }
 
 #small_news_preview .see_more:hover {
@@ -200,7 +206,7 @@ footer p {
 }
 
 .indexes {
-    padding: 10px;
+    padding: 1vw;
     grid-column: 4;
     grid-row-start: 1;
     grid-row-end: 4;
@@ -209,7 +215,7 @@ footer p {
 
 .home_index_flexbox {
     height: 90%;
-    max-height:90%;
+    max-height: 90%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -224,7 +230,7 @@ footer p {
     max-width: 35%;
     height: 5%;
     max-height: 5%;
-    margin-bottom: 30px;
+    margin-bottom: 6vh;
 }
 
 .index_item:not(:first-child) {
@@ -233,44 +239,48 @@ footer p {
     max-width: 35%;
     height: 5%;
     max-height: 5%;
-    margin-bottom: 30px;
-    margin-top: 30px;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
 }
 
 .index_title {
     font-family: Arial;
+    font-size: 1.1vw;
     color:blue;
-    margin: 5px;
+    margin: 0.5vw;
 }
 
 .index_price {
     font-family: Georgia;
+    font-size: 1.1vw;
     color:black;
     margin: 0px;
 }
 
 .index_change_positive {
     font-family: Georgia;
+    font-size: 1.1vw;
     color:rgb(45, 149, 163);
     margin: 0px;
 }
 
 .index_change_negative {
     font-family: Georgia;
+    font-size: 1.1vw;
     color:red;
     margin: 0px;
 }
 
 .adds {
     margin-top: 9vw;
-    border: 5px solid red;
+    border: 0.3vw solid red;
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row: 3;
 }
 
 #add_text {
-    font-size: 20px;
+    font-size: 1.5vw;
     font-family: Georgia;
     color:red;
     text-align: center; 
@@ -282,245 +292,12 @@ footer p {
 }
 
 
-/*----------------CSS concerning the charts screen-------------------*/
-.charts_wrapper {
-    display: grid;
-    gap: 10px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    width: 100vw;
-    max-width: 100vw;
-    height: 100vh;
-    max-height: 100vw;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 3fr 1.6fr;
-}
-
-.stock_price_chart {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row: 2;
-}
-
-.prediction {
-    float: none;
-    width: 95vw;
-    max-width: 95vw;
-    height: 100%;
-    max-height: 100%;
-}
-
-#min15_btn, #min30_btn, #min45_btn, #hours2_btn, #all_btn {
-    font-family: Georgia;
-    font-weight:bold;
-    background-color:rgb(170, 175, 223);
-    height: 4vh;
-    max-height: 4vh;
-    width: 3vw;
-    max-width: 3vw;
-    border: none;
-    border-radius: 20%;
-    cursor: pointer;
-}
-
-#min15_btn:hover, #min30_btn:hover, #min45_btn:hover, #hours2_btn:hover, #all_btn:hover {
-    background-color:rgb(137, 143, 201);
-}
-
-#AMC_btn, #Symbol_2_btn, #Symbol_3_btn, #Symbol_4_btn, #Symbol_5_btn {
-    font-family: Georgia;
-    font-weight:bold;
-    background-color:rgb(145, 209, 140);
-    height: 4vh;
-    max-height: 4vh;
-    width: 3vw;
-    max-width: 3vw;
-    border: none;
-    border-radius: 20%;
-    cursor: pointer;
-}
-
-#AMC_btn:hover, #Symbol_2_btn:hover, #Symbol_3_btn:hover, #Symbol_4_btn:hover, #Symbol_5_btn:hover {
-    background-color:rgb(105, 182, 99);
-}
-
-#AMC_btn {
-    margin-left: 1vw;
-}
-
-.charts_news {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row: 3;
-}
-
-.charts_news h1 {
-    width: auto;
-    max-width: auto;
-}
-
-#charts_news_img {
-    float: left;
-    padding-right: 10px;
-}
-
-#charts_news_preview {
-    font-family: Arial;
-    color: rgb(98, 101, 104);
-    font-size: 16px;
-    width: 80%;
-    max-width: 80%;
-}
-
-
-/*----------------CSS concerning the news screen--------------------*/
-.news_wrapper {
-    display: grid;
-    gap: 10px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    width: 100vw;
-    max-width: 100vw;
-    height: 100vh;
-    max-height: 100vh;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 5fr;
-}
-
-.news_search_bar {
-    padding: 10px;
-    grid-column: 1;
-    grid-row: 1;
-}
-
-/*Make it functional*/
-#news_query {
-    width: 80%;
-    max-width: 80%;
-    height: 35px;
-    max-height: 35px;
-    font-family: Arial;
-    outline: none;
-}
-
-/*Make it functional*/
-#news_search_btn {
-    height: 34px;
-    max-height: 34px;
-    width: 60px;
-    max-width: 60px;
-    background-color:rgb(106, 116, 207);
-    cursor: pointer;
-}
-
-#news_search_btn:hover {
-    background-color:rgb(78, 85, 148);
-}
-
-.news_left {
-    padding: 10px;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row: 2;
-}
-
-.news_right {
-    padding: 10px;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row: 2;
-}
-
-.news_flexbox {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: baseline;
-    align-content: space-around;
-}
-
-.news_right .news_flexbox .news_box:first-child {
-    margin-top: 4.5vw;
-}
-
-.news_box {
-    margin-bottom: 2vw;
-}
-
-.news_img {
-    float: left;
-    margin-right: 10px;
-    margin-bottom: 5px;
-}
-
-.news_title a{
-    font-family: Arial;
-    color: black;
-    font-size: 20px;
-    text-decoration: none;
-    width: 85%;
-    max-width: 85%;
-    margin-bottom: 5px;
-    margin-top: 0px;
-}
-
-.news_title a:hover {
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.news_text_preview {
-    font-family: Arial;
-    color: rgb(98, 101, 104);
-    font-size: 16px;
-    width: 85%;
-    max-width: 85%;
-    margin-bottom: 0.7vw;
-}
-
-#hours_posted {
-    font-family: Arial;
-    color: rgb(98, 101, 104);
-    font-size: 0.9vw;
-    width: auto;
-    max-width: auto;
-}
-
-#share_btn {
-    background-color: rgb(228, 228, 228);
-    font-family: Arial;
-    font-size: 0.9vw;
-    width: 4.8vw;
-    max-width: 4.8vw;
-    height: 3.8vh;
-    max-height: 3.8vh;
-    border: 1px solid black;
-    border-radius: 10%;
-    margin-left: 10px;
-}
-
-#hours_posted, #share_btn {
-    margin-top: 0px;
-    display: inline;
-}
-
-#share_btn:hover {
-    cursor: pointer;
-    background-color: rgb(153, 196, 216);
-}
-
-
 /*--------------------CSS concerning the watchlist screen--------------------*/
 .watchlist_wrapper {
     display: grid;
-    gap: 10px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    gap: 1vw;
+    padding-top: 5vw;
+    padding-bottom: 1vw;
     width: 100vw;
     max-width: 100vw;
     height: 100vh;
@@ -530,7 +307,7 @@ footer p {
 }
 
 .symbol_options {
-    padding: 10px;
+    padding: 1vw;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row: 1;
@@ -540,7 +317,7 @@ footer p {
     width: 95%;
     max-width: 95%;
     padding: 1vw;
-    border: 0.4vw solid rgb(221, 222, 226);
+    border: 0.3vw solid rgb(221, 222, 226);
     border-radius: 2%;
 }
 
@@ -564,11 +341,11 @@ footer p {
 }
 
 .symbol_screen {
-    padding: 10px;
+    padding: 1vw;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row: 2;
-    border: 0.4vw solid rgb(221, 222, 226);
+    border: 0.3vw solid rgb(221, 222, 226);
     border-radius: 2%;
 }
 
@@ -607,20 +384,259 @@ footer p {
 #stock_plot {
     width: 90%;
     max-width: 90%;
-    height:80%;
-    max-height:80%;
+    height: 80%;
+    max-height: 80%;
     padding: 1vw;
-    border: 0.4vw solid rgb(221, 222, 226);
+    border: 0.3vw solid rgb(221, 222, 226);
     border-radius: 2%;
+}
+
+
+/*----------------CSS concerning the news screen--------------------*/
+.news_wrapper {
+    display: grid;
+    gap: 1vw;
+    padding-top: 3vw;
+    padding-bottom: 1vw;
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 5fr;
+}
+
+.news_search_bar {
+    padding: 1vw;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/*Make it functional*/
+#news_query {
+    width: 40vw;
+    max-width: 40vw;
+    height: 5vh;
+    max-height: 5vh;
+    font-family: Arial;
+    outline: none;
+}
+
+/*Make it functional*/
+#news_search_btn {
+    width: 4vw;
+    max-width: 4vw;
+    height: 5vh;
+    max-height: 5vh;
+    background-color:rgb(106, 116, 207);
+    cursor: pointer;
+}
+
+#news_search_btn:hover {
+    background-color:rgb(78, 85, 148);
+}
+
+.news_left {
+    padding: 1vw;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 2;
+}
+
+.news_right {
+    padding: 1vw;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row: 2;
+}
+
+.news_flexbox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    align-content: space-around;
+}
+
+.news_right .news_flexbox .news_box:first-child {
+    margin-top: 4.5vw;
+}
+
+.news_box {
+    margin-bottom: 2vw;
+}
+
+.news_img {
+    float: left;
+    margin-right: 1.2vw;
+    margin-bottom: 1vw;
+}
+
+.news_title a{
+    font-family: Arial;
+    color: black;
+    font-size: 1.3vw;
+    text-decoration: none;
+    width: 85%;
+    max-width: 85%;
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+
+.news_title a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.news_text_preview {
+    font-family: Arial;
+    color: rgb(98, 101, 104);
+    font-size: 1.1vw;
+    width: 85%;
+    max-width: 85%;
+    margin-bottom: 0.7vw;
+}
+
+#hours_posted {
+    font-family: Arial;
+    color: rgb(98, 101, 104);
+    font-size: 0.9vw;
+    width: auto;
+    max-width: auto;
+}
+
+#share_btn {
+    background-color: rgb(228, 228, 228);
+    font-family: Arial;
+    font-size: 0.9vw;
+    width: 4.8vw;
+    max-width: 4.8vw;
+    height: 3.8vh;
+    max-height: 3.8vh;
+    border: 1px solid black;
+    border-radius: 10%;
+    margin-left: 1vw;
+}
+
+#hours_posted, #share_btn {
+    margin-top: 0px;
+    display: inline;
+}
+
+#share_btn:hover {
+    cursor: pointer;
+    background-color: rgb(153, 196, 216);
+}
+
+
+/*----------------CSS concerning the charts screen-------------------*/
+.charts_wrapper {
+    display: grid;
+    gap: 1vw;
+    padding-top: 3vw;
+    padding-bottom: 2vw;
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    max-height: 100vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1.6fr;
+}
+
+.stock_price_chart {
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row: 2;
+}
+
+.prediction {
+    float: none;
+    width: 95vw;
+    max-width: 95vw;
+    height: 100%;
+    max-height: 100%;
+}
+
+#min15_btn, #min30_btn, #min45_btn, #hours2_btn, #all_btn {
+    font-family: Georgia;
+    font-weight: bold;
+    font-size: 0.9vw;
+    background-color:rgb(170, 175, 223);
+    height: 4vh;
+    max-height: 4vh;
+    min-height: 4vh;
+    width: 3vw;
+    max-width: 3vw;
+    min-width: 3vw;
+    border: none;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+#min15_btn:hover, #min30_btn:hover, #min45_btn:hover, #hours2_btn:hover, #all_btn:hover {
+    background-color:rgb(137, 143, 201);
+}
+
+#AMC_btn, #Symbol_2_btn, #Symbol_3_btn, #Symbol_4_btn, #Symbol_5_btn {
+    font-family: Georgia;
+    font-weight: bold;
+    font-size: 0.9vw;
+    background-color:rgb(145, 209, 140);
+    height: 4vh;
+    max-height: 4vh;
+    min-height: 4vh;
+    width: 3vw;
+    max-width: 3vw;
+    min-width: 3vw;
+    border: none;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+#AMC_btn:hover, #Symbol_2_btn:hover, #Symbol_3_btn:hover, #Symbol_4_btn:hover, #Symbol_5_btn:hover {
+    background-color:rgb(105, 182, 99);
+}
+
+#AMC_btn {
+    margin-left: 1vw;
+}
+
+.charts_news {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row: 3;
+}
+
+.charts_news h1 {
+    width: auto;
+    max-width: auto;
+}
+
+#charts_news_img {
+    float: left;
+    padding-right: 1vw;
+}
+
+#charts_news_preview {
+    font-family: Arial;
+    color: rgb(98, 101, 104);
+    font-size: 1.1vw;
+    width: 80%;
+    max-width: 80%;
 }
 
 
 /*-----------------CSS concerning user screen-------------------*/
 .user_wrapper {
     display: grid;
-    gap: 10px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    gap: 1vw;
+    padding-top: 4vw;
+    padding-bottom: 1vw;
     width: 100vw;
     max-width: 100vw;
     height: 100vh;
@@ -631,7 +647,7 @@ footer p {
 
 .profile_options {
     background-color:rgb(4, 94, 26);
-    padding: 10px;
+    padding: 1vw;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row: 1;
@@ -639,7 +655,7 @@ footer p {
 
 .investments {
     background-color:rgb(94, 4, 87);
-    padding: 10px;
+    padding: 1vw;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row: 2;
@@ -647,7 +663,7 @@ footer p {
 
 .stocks {
     background-color:rgb(60, 69, 196);
-    padding: 10px;
+    padding: 1vw;
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;

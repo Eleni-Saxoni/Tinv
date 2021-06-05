@@ -143,37 +143,7 @@
 
             <div class="stock_time_series">
                 <div id="stock_plot">
-                    <script>
-                        function makeplot() {
-                            Plotly.d3.csv("files/AMC.csv", function(data){ processData(data) } );
-                        };
-                            
-                        function processData(allRows) {
-
-                            console.log(allRows);
-                            var x = [], y = [], standard_deviation = [];
-
-                            for (var i=0; i<allRows.length; i++) {
-                                row = allRows[i];
-                                x.push( row['Dates'] );
-                                y.push( row['Close'] );
-                            }
-                            console.log( 'X', x, 'Y', y, 'SD',standard_deviation );
-                            makePlotly( x, y, standard_deviation );
-                        }
-
-                        function makePlotly( x, y, standard_deviation ){
-                            var plotDiv = document.getElementById("stock_plot");
-                            var traces = [{
-                                x: x, 
-                                y: y
-                            }];
-
-                            Plotly.newPlot('stock_plot', traces, 
-                                {title: 'AMC'});
-                        };
-                        makeplot();
-                    </script>
+                    <script> depictTimeSeries() </script>
                 </div>
             </div>
         </div>

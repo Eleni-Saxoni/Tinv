@@ -3,8 +3,6 @@ To do:
 - Make the prediction_options_buttons functional (charts)
 - Make symbol_buttons functional (watchlist)
 - Make functional searchbars (index, charts, news) - check app.js
-- Change every px to % or vh/vw
-- Make share button functional ??
 - Add footer to some of the pages
 
 

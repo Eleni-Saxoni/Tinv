@@ -7,6 +7,6 @@
 Εαν δεν έχουμε ήδη ανοιχτό τον Chrome:
 1) Command Prompt
 2) "whateverIsYourChromeΕxePath\chrome.exe" --allow-file-access-from-files
-πχ "C:\Program Files(x84)\Google\Chrome\Application\chrome.exe" --allow-file-access-from-files
+πχ "C:\Program Files(x64)\Google\Chrome\Application\chrome.exe" --allow-file-access-from-files
 
 Η παραπάνω παράμετρος κατά το άνοιγμα του Chrome δεν θα επηρεάσει την επόμενη φορά που θα τον ανοίξετε.
