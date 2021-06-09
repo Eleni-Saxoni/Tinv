@@ -1,5 +1,3 @@
-/*This whole file is in working process */
-
 //createListItem, search: used for search bar functionality
 function createListItem(newItem) {
     let li = document.createElement('li');
@@ -28,70 +26,70 @@ function search(searchCode) {
     }  
 }
 
-
-//Used to create the plot of existing stock data in watchlist.html
+//Creates the plot of existing stock data in watchlist.html
 function depictTimeSeries() {
+
+    //Creates the actual plots
     function makeplot() {
         Plotly.d3.csv("files/AMC.csv", function(data){ processData(data) } );
     };
         
+    //Loads the data from the csv
     function processData(allRows) {
-
-        console.log(allRows);
-        var x = [], y = [], standard_deviation = [];
+        var x = [], y = [];
 
         for (var i=0; i<allRows.length; i++) {
             row = allRows[i];
-            x.push( row['Dates'] );
+            x.push( row['Hour'] );
             y.push( row['Close'] );
         }
-        console.log( 'X', x, 'Y', y, 'SD',standard_deviation );
-        makePlotly( x, y, standard_deviation );
+        makePlotly( x, y );
     }
 
-    function makePlotly( x, y, standard_deviation ){
-        var plotDiv = document.getElementById("stock_plot");
+    //Creates the axes using the data loaded
+    function makePlotly( x, y ){
         var traces = [{
             x: x, 
             y: y
         }];
-
-        Plotly.newPlot('stock_plot', traces, 
-            {title: 'AMC'});
+        var layout = {
+            xaxis: {dtick: 30},
+        }
+        Plotly.newPlot('stock_plot', traces, layout);
     };
     makeplot();
 }
 
 
-//Used to create the plot of a stock, including its prediction, in charts.html
-function predictTimeSeries() {
+//Creates the plot of a stock, including its prediction, in charts.html
+function predictTimeSeries(symbol, time) {
+    console.log("You just called me with arguments", symbol, time); //--------------------------------------------TO GO!!!
+
     function makeplot() {
-        Plotly.d3.csv("files/AMC.csv", function(data){ processData(data) } );
+        Plotly.d3.csv("files/"+symbol+".csv", function(data){ processData(data, time) } );
     };
         
-    function processData(allRows) {
-
-        console.log(allRows);
-        var x = [], y = [], standard_deviation = [];
+    function processData(allRows, timeToPredict) {
+        var x = [], y = [];
 
         for (var i=0; i<allRows.length; i++) {
             row = allRows[i];
-            x.push( row['Dates'] );
+            x.push( row['Hour'] );
             y.push( row['Close'] );
         }
-        console.log( 'X', x, 'Y', y, 'SD',standard_deviation );
-        makePlotly( x, y, standard_deviation );
+        makePlotly( x, y);
     }
 
-    function makePlotly( x, y, standard_deviation ){
-        var plotDiv = document.getElementById("plot");
+    function makePlotly(x, y){
         var traces = [{
             x: x, 
             y: y
         }];
-
-        Plotly.newPlot('plot', traces, 
-            {title: 'AMC'});
+        var layout = {
+            xaxis: {dtick: 30},
+            title: symbol
+        }
+        Plotly.newPlot('plot', traces, layout);
     };
     makeplot();
 }

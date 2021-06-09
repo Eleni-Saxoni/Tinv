@@ -1,7 +1,15 @@
 To do:
-- Complete user.html
 - Make the prediction_options_buttons functional (charts)
 - Make symbol_buttons functional (watchlist)
+
+Για κάθε μετοχή:
+- tweets.csv -> δίπλα στο prediction.csv
+- symbol.csv
+- prediction.csv
+
+
+- News api
+- Complete user.html
 - Make functional searchbars (index, charts, news) - check app.js
 - Add footer to some of the pages
 
