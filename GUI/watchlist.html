@@ -19,123 +19,54 @@
             <a class="current_tab"href="watchlist.html">Watchlist</a>
             <a href="news.html">News</a>
             <a href="charts.html">Charts</a>
-            <a href="user.html">User</a>
         </nav>
 
         <div class="watchlist_wrapper">
             <div class="symbol_options">
                 <h1>Watchlist</h1>
                 <div class="symbol_buttons">
-                    <button id="add_symbol_btn">+ Add New Symbol</button>
-                    <button id="sort_btn">^ Sort(Ascending)</button>
-                    <button id="compare_btn">Compare</button>
+                    <button id="compare_btn" onClick="findCheckedBoxes();">Compare selected symbols</button>
                 </div>
+                <script>
+                    function findCheckedBoxes(){
+                        var array = []
+                        var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+                        for (var i = 0; i < checkboxes.length; i++) {
+                            array.push(checkboxes[i].value)
+                        }
+
+                    }
+
+                </script>
             </div>
 
             <div class="symbol_screen">
                 <table>
                     <tr>
-                        <th>Name</th>
-                        <th>Last Price</th>
-                        <th>Change</th>
-                        <th>Change %</th>
-                        <th>Currency</th>
-                        <th>Last Open</th>
-                        <th>Last Close</th>
+                        <th>Available Symbols</th>
                     </tr>
                     <form>
                         <tr>
                             <td>
-                                <input type="checkbox" id="chk_AMC" name="AMC_symbol" checked>
+                                <input type="checkbox" id="chk_AMC" name="AMC" onClick="createTimeSeries(document.getElementById('chk_AMC').name, 'stock_plot');" checked>
                                 <label for="chk_AMC">AMC</label>
                             </td>
-                            <td>
-                                Last Price
-                            </td>
-                            <td>
-                                Change
-                            </td>
-                            <td>
-                                Change %
-                            </td>
-                            <td>
-                                Currency
-                            </td>
-                            <td>
-                                Last Open
-                            </td>
-                            <td>
-                                Last Close
-                            </td>
                         </tr>
                         <tr>
                             <td>
-                                <input type="checkbox" id="chk_GME" name="GME_symbol">
+                                <input type="checkbox" id="chk_AMZN" name="AMZN" onClick="createTimeSeries(document.getElementById('chk_AMZN').name, 'stock_plot');">
+                                <label for="chk_AMZN">AMZN</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="chk_GME" name="GME" onClick="createTimeSeries(document.getElementById('chk_GME').name, 'stock_plot');">
                                 <label for="chk_GME">GME</label>
                             </td>
-                            <td>
-                                Last Price
-                            </td>
-                            <td>
-                                Change
-                            </td>
-                            <td>
-                                Change %
-                            </td>
-                            <td>
-                                Currency
-                            </td>
-                            <td>
-                                Last Open
-                            </td>
-                            <td>
-                                Last Close
-                            </td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><input type="checkbox" id="chk_NVDA" name="NVDA" onClick="createTimeSeries(document.getElementById('chk_NVDA').name, 'stock_plot');">
+                                <label for="chk_NVDA">NVDA</label>
+                            </td>
                         </tr>
                     </form>
                 </table>
@@ -143,7 +74,7 @@
 
             <div class="stock_time_series">
                 <div id="stock_plot">
-                    <script> depictTimeSeries() </script>
+                    <script> createTimeSeries(document.getElementById('chk_AMC').name, "stock_plot") </script>
                 </div>
             </div>
         </div>

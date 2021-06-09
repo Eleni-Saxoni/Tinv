@@ -20,8 +20,8 @@ nav a {
     float: left;
     padding-top: 1vw;
     padding-bottom: 1vw;
-    margin-right: 3vw;
-    margin-left: 3vw;
+    margin-right: 4vw;
+    margin-left: 4vw;
     text-align: center;
     text-decoration: none;
     font-family: Georgia;
@@ -74,23 +74,6 @@ h3 a {
 h3 a:hover {
     text-decoration: underline;
 }
-
-/*
-footer {
-    background-color: rgb(221, 222, 226);
-    width: 100%;
-    max-width: 100%;
-    padding: 0.5vw;
-    margin-top: 2vw;
-}
-
-footer p {
-    color:rgb(159, 161, 163);
-    overflow: hidden;
-    text-align: center;
-    font-family: Georgia;
-    font-size: 1vw;
-}*/
 
 
 /*-----------------CSS concerning the home screen----------------------*/
@@ -323,8 +306,8 @@ footer p {
 
 .symbol_buttons button{
     background-color:rgb(170, 175, 223);
-    margin-left: 2.6vw;
-    margin-right: 1vw;
+    margin-left: 17vw;
+    margin-right: 17vw;
     border: none;
     border-radius: 10%;
     cursor: pointer;
@@ -579,9 +562,9 @@ footer p {
     height: 3vh;
     max-height: 3vh;
     min-height: 3vh;
-    width: 6vw;
-    max-width: 6vw;
-    min-width: 6vw;
+    width: 4.5vw;
+    max-width: 4.5vw;
+    min-width: 4.5vw;
 }
 
 #prediction_btn {
