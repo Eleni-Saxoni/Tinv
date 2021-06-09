@@ -459,6 +459,10 @@ footer p {
     align-content: space-around;
 }
 
+.container {
+    display: grid;
+    grid-row-gap: 50px;
+}
 .news_right .news_flexbox .news_box:first-child {
     margin-top: 4.5vw;
 }

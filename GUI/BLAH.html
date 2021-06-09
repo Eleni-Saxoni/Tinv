@@ -1,0 +1,34 @@
+
+<html>
+
+<script>
+const api_url ="https://newsapi.org/v2/everything?q=Apple&from=2021-06-09&sortBy=popularity&apiKey=f23497267b0c4ad5b2a77fd6b0ff79e4";
+
+async function getapi(url) {
+    
+    // Storing response
+    const response = await fetch(url);
+    
+    // Storing data in form of JSON
+    var data = await response.json();
+    console.log(data);
+    if (response) {
+        hideloader();
+    }
+    show(data);
+}
+getapi(api_url);
+
+    'q=Apple&' +
+    'from=2021-06-09&' +
+    'sortBy=popularity&' +
+    'apiKey=f23497267b0c4ad5b2a77fd6b0ff79e4';
+
+var req = new Request(url);
+
+fetch(req)
+.then(function(response) {
+  console.log(response.json());
+})
+</script>
+</html>
