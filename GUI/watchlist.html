@@ -32,9 +32,17 @@
                         var array = []
                         var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
                         for (var i = 0; i < checkboxes.length; i++) {
-                            array.push(checkboxes[i].value)
+                            array.push(checkboxes[i].name)
                         }
-
+                        if (checkboxes.length == 2) {
+                            compareTwoSymbols(array);
+                        }
+                        else if (checkboxes.length == 3) {
+                            compareThreeSymbols(array);
+                        }
+                        else if(checkboxes.length == 4) {
+                            compareAllSymbols(array);
+                        }
                     }
 
                 </script>
