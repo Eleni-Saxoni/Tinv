@@ -35,7 +35,7 @@
                     <button id="home_and_charts_search_btn">🔍</button>
                 </form>
             </div>
-            
+
             <div class="stock_price_chart">
                 <h2>Live share price evolution</h2>
                 <div class="prediction">
@@ -43,23 +43,15 @@
                         <label for="prediction_options">Choose a symbol and a time period</label>
                         <select id="symbols" name="symbols">
                             <option value="AMC" selected>AMC</option>
-                            <option value="Symbol2">Symbol2</option>
-                            <option value="Symbol3">Symbol3</option>
-                            <option value="Symbol4">Symbol4</option>
-                            <option value="Symbol5">Symbol5</option>
+                            <option value="GME">GME</option>
+                            <option value="AMZN">AMZN</option>
+                            <option value="NVDA">NVDA</option>
                         </select>
-                        <select id="periods" name="periods">
-                            <option value="min15" selected>15m</option>
-                            <option value="30min">30m</option>
-                            <option value="45min">45m</option>
-                            <option value="2h">2h</option>
-                            <option value="all">all</option>
-                        </select>
-                        <button id="prediction_btn" onClick="predictTimeSeries(document.getElementById('symbols').value, document.getElementById('periods').value);">Show prediction</button>
+                        <button id="prediction_btn" onClick="predictTimeSeries(document.getElementById('symbols').value);">Show prediction</button>
                     </div>
                     
                     <div id="plot"> 
-                        <script> predictTimeSeries(document.getElementById('symbols').value, document.getElementById('periods').value); </script>
+                        <script> predictTimeSeries(document.getElementById('symbols').value); </script>
                     </div>
                 </div>
             </div>
